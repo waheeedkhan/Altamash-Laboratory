@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altamash General Hospital · Laboratory suite</title>
+    <style>
+        /* Softronic professional theme – clean, neutral, data‑oriented */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f5f9;
+            color: #1e2b3c;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 32px;
+        }
+
+        /* header */
+        header {
+            background: #ffffff;
+            padding: 16px 28px;
+            border-radius: 16px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(0, 20, 40, 0.04);
+            border: 1px solid #e9ecf2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hospital-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hospital-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0b3954;
+            letter-spacing: -0.3px;
+        }
+
+        .hospital-sub {
+            font-size: 0.8rem;
+            color: #5f6c80;
+            margin-top: 2px;
+        }
+
+        .page-title {
+            font-size: 1.9rem;
+            font-weight: 500;
+            color: #1a4b6d;
+            background: #eef3f9;
+            padding: 6px 18px;
+            border-radius: 40px;
+            letter-spacing: -0.2px;
+        }
+
+        /* design credit */
+        .design-credit {
+            font-size: 0.75rem;
+            color: #7a8ba1;
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+            text-align: right;
+        }
+
+        /* tabs */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 25px;
+            background: white;
+            padding: 8px;
+            border-radius: 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #e2e7ef;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #3e526b;
+            cursor: pointer;
+            transition: all 0.15s;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: #1d5c87;
+            color: white;
+            box-shadow: 0 4px 8px rgba(26,108,166,0.2);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #e6ecf5;
+            color: #1d5c87;
+        }
+
+        /* main cards */
+        .calculator-section {
+            background: #ffffff;
+            padding: 28px 32px;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(0, 20, 40, 0.04);
+            border: 1px solid #eef2f8;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #144a6f;
+            font-weight: 500;
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+            letter-spacing: -0.3px;
+            border-bottom: 2px solid #e9f0f7;
+            padding-bottom: 12px;
+        }
+
+        h3 {
+            font-weight: 500;
+            color: #1f4868;
+            margin: 20px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #2c3d55;
+            font-size: 0.95rem;
+        }
+
+        input[type="number"], select, input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            background: #f9fcff;
+            border: 1px solid #dae1ec;
+            border-radius: 14px;
+            font-size: 1rem;
+            transition: 0.15s;
+            color: #1e2b3c;
+        }
+
+        select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%233e526b" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+        }
+
+        input:focus, select:focus {
+            border-color: #1d5c87;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26,108,166,0.15);
+            background: #ffffff;
+        }
+
+        button {
+            background: #1d5c87;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s;
+            width: auto;
+            min-width: 160px;
+            letter-spacing: 0.2px;
+            box-shadow: 0 4px 8px rgba(0,60,100,0.08);
+            margin-right: 12px;
+            margin-bottom: 8px;
+        }
+
+        button:hover {
+            background: #0f476b;
+        }
+
+        button.secondary {
+            background: #6c859c;
+            box-shadow: none;
+        }
+        button.secondary:hover {
+            background: #4e667c;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #f5faff;
+            border-radius: 18px;
+            border-left: 5px solid #1d5c87;
+        }
+
+        .result-value {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #124263;
+            margin: 8px 0 4px;
+        }
+
+        .interpretation {
+            color: #436684;
+            font-size: 1rem;
+        }
+
+        /* grids */
+        .grid-2, .grid-3, .grid-4 {
+            display: grid;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+        .card {
+            background: #f6faff;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #e3ebf6;
+            text-align: center;
+        }
+
+        .card .cell-count {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1d5c87;
+            margin: 10px 0;
+        }
+
+        kbd {
+            background: #2c3e5c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .key-hint {
+            background: #eaf1fb;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #1b4e72;
+        }
+
+        .total-panel {
+            background: #eef3fc;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .progress {
+            height: 10px;
+            background: #d3e0f0;
+            border-radius: 20px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #1d5c87;
+            width: 0%;
+            transition: width 0.2s;
+        }
+
+        .small-note {
+            background: #f2f7ff;
+            padding: 14px 18px;
+            border-radius: 16px;
+            color: #2c5779;
+            font-size: 0.95rem;
+            border: 1px solid #d9e9ff;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px 10px 10px;
+            color: #5f7694;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2ecf9;
+            margin-top: 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+
+        /* ESR timer specific */
+        .timer-add-panel {
+            background: #f6faff;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+        }
+        .timer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .timer-item {
+            background: white;
+            border-radius: 18px;
+            padding: 16px 22px;
+            border: 1px solid #dde5f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .timer-item.completed {
+            background: #fff3e6;
+            border-left: 6px solid #c45a2c;
+            animation: pulseAlert 1.5s infinite;
+        }
+        @keyframes pulseAlert {
+            0% { background: #fff3e6; }
+            50% { background: #ffe0cc; }
+            100% { background: #fff3e6; }
+        }
+        .timer-info {
+            display: flex;
+            align-items: baseline;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .labno-badge {
+            font-weight: 700;
+            background: #1d5c87;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+        }
+        .timer-display {
+            font-size: 2rem;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+            color: #0b3954;
+        }
+        .timer-actions {
+            display: flex;
+            gap: 12px;
+        }
+        .timer-actions button {
+            min-width: 90px;
+            padding: 8px 16px;
+        }
+        .empty-timer-msg {
+            color: #6f88a0;
+            padding: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hospital-logo">
+                <span class="hospital-name">Altamash General Hospital</span>
+                <span class="hospital-sub">laboratory information system · softronic interface</span>
+                <span class="design-credit">✦ design by waheed khan ✦</span>
+            </div>
+            <div class="page-title">Laboratory calculator</div>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="ptinr">PT/INR</button>
+            <button class="tab-btn" data-tab="creatinine">Creatinine</button>
+            <button class="tab-btn" data-tab="ldl">LDL</button>
+            <button class="tab-btn" data-tab="wbc">WBC+NRBC</button>
+            <button class="tab-btn" data-tab="platelet">Platelet(40x)</button>
+            <button class="tab-btn" data-tab="correctedTLC">Corr TLC</button>
+            <button class="tab-btn" data-tab="rbcIndices">RBC Indices</button>
+            <button class="tab-btn" data-tab="anionGap">Anion Gap</button>
+            <button class="tab-btn" data-tab="absoluteCounts">Abs Counts</button>
+            <button class="tab-btn" data-tab="mentzer">Mentzer</button>
+            <button class="tab-btn" data-tab="esrTimer">ESR Timer</button>
+        </div>
+        
+        <!-- ========== PT/INR ========= -->
+        <div id="ptinr" class="tab-content active">
+            <section class="calculator-section">
+                <h2>PT / INR</h2>
+                <div class="form-group"><label>Patient PT (sec)</label><input type="number" id="pt-result" step="0.1" value="18"></div>
+                <div class="form-group"><label>Control mean PT (sec)</label><input type="number" id="control-mean" step="0.1" value="14.0"></div>
+                <div class="form-group"><label>ISI value</label><input type="number" id="isi" step="0.01" value="1.0"></div>
+                <button id="calculate-inr">Calculate INR</button>
+                <div class="result" id="inr-result" style="display:none;"><div class="result-value" id="inr-value"></div><div class="interpretation" id="inr-interpretation"></div></div>
+            </section>
+        </div>
+        
+        <!-- ========== Creatinine clearance ========= -->
+        <div id="creatinine" class="tab-content">
+            <section class="calculator-section">
+                <h2>Creatinine clearance (24h urine)</h2>
+                <div class="form-group"><label>Urine creatinine (mg/dL)</label><input type="number" id="urine-creatinine" step="0.01" value="100"></div>
+                <div class="form-group"><label>Serum creatinine (mg/dL)</label><input type="number" id="serum-creatinine" step="0.01" value="1.0"></div>
+                <div class="form-group"><label>24h urine volume (mL)</label><input type="number" id="urine-volume" step="1" value="1500"></div>
+                <button id="calculate-creatinine">Calculate CrCl</button>
+                <div class="result" id="creatinine-result" style="display:none;"><div class="result-value" id="creatinine-value"></div><div class="interpretation" id="creatinine-interpretation"></div></div>
+            </section>
+        </div>
+        
+        <!-- ========== LDL ========= -->
+        <div id="ldl" class="tab-content">
+            <section class="calculator-section">
+                <h2>LDL cholesterol (Friedewald)</h2>
+                <div class="form-group"><label>Total cholesterol (mg/dL)</label><input type="number" id="total-cholesterol" step="0.1" value="200"></div>
+                <div class="form-group"><label>HDL cholesterol (mg/dL)</label><input type="number" id="hdl-cholesterol" step="0.1" value="50"></div>
+                <div class="form-group"><label>Triglycerides (mg/dL)</label><input type="number" id="triglycerides" step="0.1" value="150"></div>
+                <button id="calculate-ldl">Calculate LDL</button>
+                <div class="result" id="ldl-result" style="display:none;"><div class="result-value" id="ldl-value"></div><div class="interpretation" id="ldl-interpretation"></div></div>
+            </section>
+        </div>
+        
+        <!-- ========== WBC differential + NRBC ========= -->
+        <div id="wbc" class="tab-content">
+            <section class="calculator-section">
+                <h2>WBC differential · NRBC</h2>
+                <p style="color:#2b587b;">Count 100 WBC · <kbd>N</kbd> for NRBC · <kbd>R</kbd> restart</p>
+                <div class="grid-4">
+                    <div class="card"><h3>Neutrophils</h3><div class="cell-count" id="neutrophil-count">0</div><span class="key-hint"><kbd>A</kbd></span></div>
+                    <div class="card"><h3>Lymphocytes</h3><div class="cell-count" id="lymphocyte-count">0</div><span class="key-hint"><kbd>S</kbd></span></div>
+                    <div class="card"><h3>Monocytes</h3><div class="cell-count" id="monocyte-count">0</div><span class="key-hint"><kbd>D</kbd></span></div>
+                    <div class="card"><h3>Eosinophils</h3><div class="cell-count" id="eosinophil-count">0</div><span class="key-hint"><kbd>F</kbd></span></div>
+                    <div class="card"><h3>NRBC</h3><div class="cell-count" id="nrbc-count">0</div><span class="key-hint"><kbd>N</kbd> (per 100)</span></div>
+                </div>
+                <div class="total-panel">
+                    <span style="font-size:1.5rem;">total WBC: <span id="total-wbc-count">0</span></span>
+                    <div class="progress"><div class="progress-bar" id="wbc-progress-bar"></div></div>
+                    <span class="key-hint"><kbd>R</kbd> restart</span>
+                </div>
+                <div class="result" id="wbc-result" style="display: none;"></div>
+            </section>
+        </div>
+        
+        <!-- ========== Platelet counter (40x, 10 fields) ========= -->
+        <div id="platelet" class="tab-content">
+            <section class="calculator-section">
+                <h2>Platelet estimate (40x, 10 fields)</h2>
+                <p><kbd>F</kbd> next field · <kbd>P</kbd> add platelet · <kbd>R</kbd> restart</p>
+                <div class="grid-2">
+                    <div class="card"><h3>Fields counted</h3><div class="cell-count" id="fields-count">0</div><span class="key-hint"><kbd>F</kbd></span></div>
+                    <div class="card"><h3>Total platelets</h3><div class="cell-count" id="platelet-sum">0</div><span class="key-hint"><kbd>P</kbd></span></div>
+                </div>
+                <div class="total-panel">
+                    <div>fields: <span id="fields-done">0</span>/10</div>
+                    <div class="progress"><div class="progress-bar" id="platelet-progress"></div></div>
+                    <button id="calc-platelet-btn">Estimate platelet count</button>
+                </div>
+                <div class="result" id="platelet-result" style="display:none;"><div class="result-value" id="platelet-value"></div><div class="interpretation" id="platelet-interpretation"></div></div>
+                <div class="small-note">Avg/field × 20,000 = platelets/µL</div>
+            </section>
+        </div>
+        
+        <!-- ========== Corrected TLC ========= -->
+        <div id="correctedTLC" class="tab-content">
+            <section class="calculator-section">
+                <h2>Corrected TLC (WBC)</h2>
+                <div class="flex-row">
+                    <div class="form-group"><label>Uncorrected WBC (×10³/µL)</label><input type="number" id="uncorrected-wbc" step="0.01" value="15.0"></div>
+                    <div class="form-group"><label>NRBC per 100 WBC</label><input type="number" id="nrbc-for-correction" step="1" value="5"></div>
+                </div>
+                <button id="calculate-corrected-tlc">Calculate corrected TLC</button>
+                <div class="result" id="corrected-tlc-result" style="display:none;"><div class="result-value" id="corrected-tlc-value"></div><div class="interpretation" id="corrected-tlc-interpretation"></div></div>
+                <div class="small-note">Corrected = (uncorrected × 100) / (100 + NRBC)</div>
+            </section>
+        </div>
+        
+        <!-- ========== RBC INDICES ========= -->
+        <div id="rbcIndices" class="tab-content">
+            <section class="calculator-section">
+                <h2>RBC Indices (MCV, MCH, MCHC) · by age/gender</h2>
+                <div class="grid-3">
+                    <div class="form-group"><label>Hemoglobin (g/dL)</label><input type="number" id="hgb" step="0.1" value="13.5"></div>
+                    <div class="form-group"><label>Hematocrit (%)</label><input type="number" id="hct" step="0.1" value="40"></div>
+                    <div class="form-group"><label>RBC count (×10⁶/µL)</label><input type="number" id="rbc" step="0.01" value="4.5"></div>
+                </div>
+                <div class="flex-row">
+                    <div class="form-group"><label>Age (years)</label><input type="number" id="age" value="35"></div>
+                    <div class="form-group"><label>Gender</label>
+                        <select id="gender"><option value="male">Male</option><option value="female">Female</option><option value="child">Child (2-12y)</option><option value="infant">Infant</option></select>
+                    </div>
+                </div>
+                <button id="calcRBCIndices">Calculate indices</button>
+                <div class="result" id="rbcIndicesResult" style="display:none;"><div class="result-value" id="rbcIndicesValue"></div><div class="interpretation" id="rbcIndicesInterp"></div><div id="rdwInterp"></div></div>
+                <div class="form-group"><label>RDW (%) (optional)</label><input type="number" id="rdw" step="0.1"></div>
+            </section>
+        </div>
+        
+        <!-- ========== ANION GAP ========= -->
+        <div id="anionGap" class="tab-content">
+            <section class="calculator-section">
+                <h2>Anion Gap & Delta Gap</h2>
+                <div class="grid-3">
+                    <div class="form-group"><label>Sodium (Na, mEq/L)</label><input type="number" id="na" step="0.1" value="140"></div>
+                    <div class="form-group"><label>Chloride (Cl, mEq/L)</label><input type="number" id="cl" step="0.1" value="105"></div>
+                    <div class="form-group"><label>Bicarbonate (HCO₃, mEq/L)</label><input type="number" id="hco3" step="0.1" value="24"></div>
+                    <div class="form-group"><label>Albumin (g/dL) (opt)</label><input type="number" id="albumin" step="0.1" placeholder="e.g., 4.0"></div>
+                </div>
+                <button id="calcAnionGap">Calculate gaps</button>
+                <div class="result" id="anionGapResult" style="display:none;"><div class="result-value" id="anionGapValue"></div><div id="deltaGapInterpretation"></div></div>
+            </section>
+        </div>
+        
+        <!-- ========== ABSOLUTE COUNTS ========= -->
+        <div id="absoluteCounts" class="tab-content">
+            <section class="calculator-section">
+                <h2>Absolute Cell Counts (ANC, ALC, AEC, RNL)</h2>
+                <div class="grid-3">
+                    <div class="form-group"><label>Total WBC (×10³/µL)</label><input type="number" id="absWBC" step="0.01" value="8.0"></div>
+                    <div class="form-group"><label>Neutrophils %</label><input type="number" id="absNeut" step="0.1" value="60"></div>
+                    <div class="form-group"><label>Lymphocytes %</label><input type="number" id="absLymph" step="0.1" value="30"></div>
+                    <div class="form-group"><label>Eosinophils %</label><input type="number" id="absEos" step="0.1" value="3"></div>
+                    <div class="form-group"><label>Monocytes %</label><input type="number" id="absMono" step="0.1" value="6"></div>
+                </div>
+                <button id="calcAbsolute">Calculate</button>
+                <button id="pullFromDifferential" style="background:#5f7694;">↺ Pull from WBC diff</button>
+                <div class="result" id="absoluteResult" style="display:none;"><div class="result-value" id="absoluteValue"></div><div class="interpretation" id="absoluteInterp"></div><div style="margin-top:15px;"><strong>RNL:</strong> <span id="rnlValue"></span> <span id="rnlInterp"></span></div></div>
+            </section>
+        </div>
+        
+        <!-- ========== MENTZER INDEX ========= -->
+        <div id="mentzer" class="tab-content">
+            <section class="calculator-section">
+                <h2>Mentzer Index (anemia differentiation)</h2>
+                <div class="grid-2">
+                    <div class="form-group"><label>MCV (fL)</label><input type="number" id="mentzerMCV" step="0.1" value="70"></div>
+                    <div class="form-group"><label>RBC (×10⁶/µL)</label><input type="number" id="mentzerRBC" step="0.01" value="5.2"></div>
+                </div>
+                <button id="calcMentzer">Calculate Mentzer Index</button>
+                <div class="result" id="mentzerResult" style="display:none;"><div class="result-value" id="mentzerValue"></div><div class="interpretation" id="mentzerInterp"></div></div>
+                <div class="small-note">&lt;13 thalassemia, &gt;13 iron deficiency</div>
+            </section>
+        </div>
+
+        <!-- ========== ESR TIMER (NEW) ========= -->
+        <div id="esrTimer" class="tab-content">
+            <section class="calculator-section">
+                <h2>⏱️ ESR Timer · Multi‑sample (60 min)</h2>
+                <div class="timer-add-panel">
+                    <div class="flex-row">
+                        <div class="form-group" style="flex:2;">
+                            <label>Lab No. / Sample ID</label>
+                            <input type="text" id="newLabNo" placeholder="e.g., 2401-ESR" maxlength="20">
+                        </div>
+                        <div style="display: flex; align-items: flex-end;">
+                            <button id="addTimerBtn" style="margin-bottom:20px;">➕ Add & Start</button>
+                        </div>
+                    </div>
+                    <p class="small-note" style="margin-top:0;">ESR runs for 60 minutes. Timer will alert with sound until acknowledged.</p>
+                </div>
+                
+                <h3>Active timers</h3>
+                <div id="timerListContainer" class="timer-list">
+                    <div class="empty-timer-msg">No active timers. Add a sample above.</div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>laboratory use · Altamash General Hospital · complete toolkit</footer>
+    </div>
+
+    <script>
+        (function() {
+            // --- Tab switching
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            function activateTab(tabId) {
+                tabs.forEach(btn => btn.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+                document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            }
+            tabs.forEach(btn => btn.addEventListener('click', (e) => activateTab(btn.dataset.tab)));
+
+            // --- PT/INR
+            document.getElementById('calculate-inr').addEventListener('click', () => {
+                const pt = parseFloat(document.getElementById('pt-result').value);
+                const mn = parseFloat(document.getElementById('control-mean').value);
+                const isi = parseFloat(document.getElementById('isi').value);
+                if ([pt,mn,isi].some(isNaN) || pt<=0 || mn<=0 || isi<=0) { alert('positive numbers'); return; }
+                const inr = Math.pow(pt/mn, isi);
+                document.getElementById('inr-value').innerText = 'INR: ' + inr.toFixed(2);
+                let interp = inr<1.0?'Below normal': inr<=1.2?'Normal': inr<=2.0?'Mild': inr<=3.0?'Therapeutic': inr<=4.0?'High': 'Elevated';
+                document.getElementById('inr-interpretation').innerText = interp;
+                document.getElementById('inr-result').style.display = 'block';
+            });
+
+            // --- Creatinine
+            document.getElementById('calculate-creatinine').addEventListener('click', () => {
+                const uc = parseFloat(document.getElementById('urine-creatinine').value);
+                const sc = parseFloat(document.getElementById('serum-creatinine').value);
+                const uv = parseFloat(document.getElementById('urine-volume').value);
+                if ([uc,sc,uv].some(isNaN) || uc<=0 || sc<=0 || uv<=0) { alert('positive numbers'); return; }
+                const crcl = (uc/sc) * (uv/1440);
+                document.getElementById('creatinine-value').innerText = 'CrCl: ' + crcl.toFixed(2) + ' mL/min';
+                let interp = crcl>90?'Normal': crcl>=60?'Mildly reduced': crcl>=30?'Moderate': crcl>=15?'Severe': 'Kidney failure';
+                document.getElementById('creatinine-interpretation').innerText = interp;
+                document.getElementById('creatinine-result').style.display = 'block';
+            });
+
+            // --- LDL
+            document.getElementById('calculate-ldl').addEventListener('click', () => {
+                const tc = parseFloat(document.getElementById('total-cholesterol').value);
+                const hdl = parseFloat(document.getElementById('hdl-cholesterol').value);
+                const tg = parseFloat(document.getElementById('triglycerides').value);
+                if ([tc,hdl,tg].some(isNaN) || tc<=0 || hdl<=0 || tg<=0) { alert('positive numbers'); return; }
+                const ldl = tc - hdl - (tg/5);
+                document.getElementById('ldl-value').innerText = 'LDL: ' + ldl.toFixed(1) + ' mg/dL';
+                let interp = ldl<100?'Optimal': ldl<=129?'Near optimal': ldl<=159?'Borderline': ldl<=189?'High': 'Very high';
+                document.getElementById('ldl-interpretation').innerText = interp;
+                document.getElementById('ldl-result').style.display = 'block';
+            });
+
+            // --- WBC differential state
+            let neut=0, lymph=0, mono=0, eos=0, nrbc=0;
+            function updateWBC() {
+                document.getElementById('neutrophil-count').innerText = neut;
+                document.getElementById('lymphocyte-count').innerText = lymph;
+                document.getElementById('monocyte-count').innerText = mono;
+                document.getElementById('eosinophil-count').innerText = eos;
+                document.getElementById('nrbc-count').innerText = nrbc;
+                const total = neut+lymph+mono+eos;
+                document.getElementById('total-wbc-count').innerText = total;
+                document.getElementById('wbc-progress-bar').style.width = Math.min(total,100)+'%';
+                if (total>=100) {
+                    let res = document.getElementById('wbc-result');
+                    res.style.display = 'block';
+                    res.innerHTML = `<div class="result-value">Differential complete</div><div class="interpretation">Neut ${(neut/total*100).toFixed(1)}% · Lymph ${(lymph/total*100).toFixed(1)}% · Mono ${(mono/total*100).toFixed(1)}% · Eos ${(eos/total*100).toFixed(1)}%<br>NRBC: ${nrbc}/100 WBC</div>`;
+                } else document.getElementById('wbc-result').style.display = 'none';
+            }
+            function resetWBC() { neut=0; lymph=0; mono=0; eos=0; nrbc=0; updateWBC(); }
+
+            // --- Platelet state
+            let pltFields=0, pltTotal=0;
+            function updatePlatelet() {
+                document.getElementById('fields-count').innerText = pltFields;
+                document.getElementById('platelet-sum').innerText = pltTotal;
+                document.getElementById('fields-done').innerText = pltFields;
+                document.getElementById('platelet-progress').style.width = (pltFields/10*100)+'%';
+            }
+            function resetPlatelet() { pltFields=0; pltTotal=0; updatePlatelet(); document.getElementById('platelet-result').style.display='none'; }
+            document.getElementById('calc-platelet-btn').addEventListener('click', ()=>{
+                if (pltFields===0) { alert('count at least one field'); return; }
+                const avg = pltTotal/pltFields;
+                const est = avg * 20000;
+                document.getElementById('platelet-value').innerText = `estimated platelets: ${Math.round(est)} /µL (${pltFields} fields)`;
+                let interp = est<150000?'Thrombocytopenia': est<=450000?'Normal': 'Thrombocytosis';
+                document.getElementById('platelet-interpretation').innerText = interp;
+                document.getElementById('platelet-result').style.display = 'block';
+            });
+
+            // --- Corrected TLC
+            document.getElementById('calculate-corrected-tlc').addEventListener('click', () => {
+                const unc = parseFloat(document.getElementById('uncorrected-wbc').value);
+                const nrbcCorr = parseFloat(document.getElementById('nrbc-for-correction').value);
+                if (isNaN(unc) || unc<=0) { alert('enter positive WBC'); return; }
+                if (isNaN(nrbcCorr) || nrbcCorr<0) { alert('NRBC cannot be negative'); return; }
+                const corr = (unc * 100) / (100 + nrbcCorr);
+                document.getElementById('corrected-tlc-value').innerText = `Corrected TLC: ${corr.toFixed(2)} (same unit)`;
+                document.getElementById('corrected-tlc-interpretation').innerText = nrbcCorr===0 ? 'No correction' : `Corrected for ${nrbcCorr} NRBCs`;
+                document.getElementById('corrected-tlc-result').style.display = 'block';
+            });
+
+            // --- RBC Indices
+            document.getElementById('calcRBCIndices').addEventListener('click', () => {
+                const hgb = parseFloat(document.getElementById('hgb').value);
+                const hct = parseFloat(document.getElementById('hct').value);
+                const rbc = parseFloat(document.getElementById('rbc').value);
+                const age = parseInt(document.getElementById('age').value);
+                const gender = document.getElementById('gender').value;
+                const rdw = parseFloat(document.getElementById('rdw').value);
+                if ([hgb,hct,rbc].some(isNaN) || hgb<=0 || hct<=0 || rbc<=0) { alert('positive HGB, HCT, RBC'); return; }
+                const mcv = (hct * 10) / rbc;
+                const mch = (hgb * 10) / rbc;
+                const mchc = (hgb * 100) / hct;
+                let interp = `MCV ${mcv.toFixed(1)} fL, MCH ${mch.toFixed(1)} pg, MCHC ${mchc.toFixed(1)} g/dL. `;
+                let ref = (gender==='male'||gender==='female')?'80-100/27-34/32-36': gender==='child'?'75-95/25-33/32-36':'70-90/23-31/32-36';
+                interp += `(ref ${ref})`;
+                document.getElementById('rbcIndicesValue').innerHTML = `MCV = ${mcv.toFixed(1)} · MCH = ${mch.toFixed(1)} · MCHC = ${mchc.toFixed(1)}`;
+                document.getElementById('rbcIndicesInterp').innerText = interp;
+                let rdwInterp = !isNaN(rdw) && rdw>0 ? (rdw<11.5?'Low RDW': rdw>14.5?'High RDW':'Normal RDW') : 'RDW not provided';
+                document.getElementById('rdwInterp').innerText = rdwInterp;
+                document.getElementById('rbcIndicesResult').style.display = 'block';
+            });
+
+            // --- Anion Gap
+            document.getElementById('calcAnionGap').addEventListener('click', () => {
+                const na = parseFloat(document.getElementById('na').value);
+                const cl = parseFloat(document.getElementById('cl').value);
+                const hco3 = parseFloat(document.getElementById('hco3').value);
+                const alb = parseFloat(document.getElementById('albumin').value);
+                if ([na,cl,hco3].some(isNaN)) { alert('enter Na, Cl, HCO3'); return; }
+                let ag = na - (cl + hco3);
+                let agDisplay = ag.toFixed(1);
+                if (!isNaN(alb) && alb>0) { let agCorr = ag + 0.25*(4.5-alb); agDisplay += ` (corrected: ${agCorr.toFixed(1)})`; }
+                const delta = (ag - 12) / (24 - hco3);
+                document.getElementById('anionGapValue').innerHTML = `Anion gap = ${agDisplay} mEq/L`;
+                let deltaInterp = '';
+                if (!isNaN(delta)) {
+                    if (delta < 0.4) deltaInterp = 'Delta <0.4: concurrent normal AG acidosis';
+                    else if (delta <= 0.8) deltaInterp = 'Delta 0.4-0.8: pure high AG acidosis';
+                    else if (delta < 1.6) deltaInterp = 'Delta 0.8-1.6: possible metabolic alkalosis';
+                    else deltaInterp = 'Delta ≥1.6: mixed high AG + alkalosis';
+                }
+                document.getElementById('deltaGapInterpretation').innerHTML = `<strong>Delta gap:</strong> ${delta.toFixed(2)} — ${deltaInterp}`;
+                document.getElementById('anionGapResult').style.display = 'block';
+            });
+
+            // --- Absolute counts
+            document.getElementById('calcAbsolute').addEventListener('click', () => {
+                const wbc = parseFloat(document.getElementById('absWBC').value);
+                const np = parseFloat(document.getElementById('absNeut').value);
+                const lp = parseFloat(document.getElementById('absLymph').value);
+                const ep = parseFloat(document.getElementById('absEos').value);
+                if ([wbc,np,lp,ep].some(isNaN) || wbc<=0) { alert('enter WBC and percentages'); return; }
+                const anc = wbc * np / 100;
+                const alc = wbc * lp / 100;
+                const aec = wbc * ep / 100;
+                const rnl = anc / alc;
+                document.getElementById('absoluteValue').innerHTML = `ANC ${anc.toFixed(2)} · ALC ${alc.toFixed(2)} · AEC ${aec.toFixed(2)} (×10³/µL)`;
+                let interp = '';
+                if (anc < 1.5) interp += 'Neutropenia. ';
+                else if (anc > 8.0) interp += 'Neutrophilia. ';
+                if (alc < 1.0) interp += 'Lymphopenia. ';
+                else if (alc > 4.0) interp += 'Lymphocytosis. ';
+                if (aec > 0.5) interp += 'Eosinophilia. ';
+                document.getElementById('absoluteInterp').innerText = interp || 'Within range.';
+                document.getElementById('rnlValue').innerText = rnl.toFixed(2);
+                document.getElementById('rnlInterp').innerText = rnl<1?'Low RNL': rnl>3?'Elevated RNL':'Normal RNL';
+                document.getElementById('absoluteResult').style.display = 'block';
+            });
+            document.getElementById('pullFromDifferential').addEventListener('click', () => {
+                const total = neut+lymph+mono+eos;
+                if (total===0) { alert('count some WBC in differential tab'); return; }
+                document.getElementById('absNeut').value = (neut/total*100).toFixed(1);
+                document.getElementById('absLymph').value = (lymph/total*100).toFixed(1);
+                document.getElementById('absEos').value = (eos/total*100).toFixed(1);
+                document.getElementById('absMono').value = (mono/total*100).toFixed(1);
+                alert('Percentages pulled.');
+            });
+
+            // --- Mentzer
+            document.getElementById('calcMentzer').addEventListener('click', () => {
+                const mcv = parseFloat(document.getElementById('mentzerMCV').value);
+                const rbc = parseFloat(document.getElementById('mentzerRBC').value);
+                if (isNaN(mcv)||isNaN(rbc)|| mcv<=0||rbc<=0) { alert('positive numbers'); return; }
+                const idx = mcv / rbc;
+                document.getElementById('mentzerValue').innerText = `Mentzer Index = ${idx.toFixed(2)}`;
+                let interp = idx < 13 ? 'Thalassemia trait likely' : (idx > 13 ? 'Iron deficiency likely' : 'Borderline');
+                document.getElementById('mentzerInterp').innerText = interp;
+                document.getElementById('mentzerResult').style.display = 'block';
+            });
+
+            // --- Global key handler (WBC and platelet)
+            document.addEventListener('keydown', (e) => {
+                const key = e.key.toLowerCase();
+                const active = Array.from(contents).find(t => t.classList.contains('active'))?.id;
+                if (active==='wbc') {
+                    const total = neut+lymph+mono+eos;
+                    if (total>=100 && key!=='n') return;
+                    e.preventDefault();
+                    if (key==='a') { neut++; updateWBC(); }
+                    else if (key==='s') { lymph++; updateWBC(); }
+                    else if (key==='d') { mono++; updateWBC(); }
+                    else if (key==='f') { eos++; updateWBC(); }
+                    else if (key==='n') { nrbc++; updateWBC(); }
+                    else if (key==='r') { resetWBC(); }
+                }
+                if (active==='platelet') {
+                    e.preventDefault();
+                    if (key==='p') { if (pltFields===0) { alert('start a field with F'); return; } pltTotal++; updatePlatelet(); }
+                    else if (key==='f') { if (pltFields<10) pltFields++; else alert('max 10'); updatePlatelet(); }
+                    else if (key==='r') { resetPlatelet(); }
+                }
+            });
+
+            // ===================== ESR TIMER MODULE =====================
+            const timers = new Map(); // key: id, value: { id, labNo, endTime, completed, soundNode, gainNode, interval }
+            let nextId = 1;
+            const ESR_DURATION = 60 * 60 * 1000; // 60 min in ms
+            
+            // Audio context (lazy)
+            let audioCtx = null;
+            function initAudio() {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                return audioCtx;
+            }
+
+            function stopSoundForTimer(timerId) {
+                const timer = timers.get(timerId);
+                if (timer && timer.soundNode) {
+                    try { timer.soundNode.stop(); } catch(e){}
+                    if (timer.gainNode) timer.gainNode.disconnect();
+                    timer.soundNode = null;
+                    timer.gainNode = null;
+                }
+            }
+
+            function startAlertSound(timerId) {
+                const timer = timers.get(timerId);
+                if (!timer) return;
+                try {
+                    const ctx = initAudio();
+                    if (ctx.state !== 'running') ctx.resume();
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.value = 880;
+                    gain.gain.value = 0.25;
+                    osc.connect(gain).connect(ctx.destination);
+                    osc.start();
+                    // loop by restarting? we'll use a repeating beep via setInterval, but keep osc for continuous?
+                    // Better: use a repeating short beep pattern.
+                    // For simplicity, we use a looping oscillator with a quick on/off via gain?
+                    // We'll do a pulsing beep using setInterval inside the timer.
+                } catch (e) { console.warn('audio error', e); }
+            }
+
+            // More robust: use a repeating beep pattern with Web Audio
+            function startBeepLoop(timerId) {
+                const timer = timers.get(timerId);
+                if (!timer) return;
+                if (timer.beepInterval) clearInterval(timer.beepInterval);
+                try {
+                    const ctx = initAudio();
+                    const beep = () => {
+                        if (!timers.has(timerId)) return;
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.type = 'triangle';
+                        osc.frequency.value = 1046;
+                        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+                        osc.connect(gain).connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 0.2);
+                    };
+                    timer.beepInterval = setInterval(beep, 1200);
+                    beep(); // immediate
+                } catch(e) {}
+            }
+
+            function stopBeepLoop(timerId) {
+                const timer = timers.get(timerId);
+                if (timer && timer.beepInterval) {
+                    clearInterval(timer.beepInterval);
+                    timer.beepInterval = null;
+                }
+            }
+
+            function renderTimerList() {
+                const container = document.getElementById('timerListContainer');
+                if (timers.size === 0) {
+                    container.innerHTML = '<div class="empty-timer-msg">No active timers. Add a sample above.</div>';
+                    return;
+                }
+                let html = '';
+                const now = Date.now();
+                for (let [id, t] of timers.entries()) {
+                    const remaining = Math.max(0, t.endTime - now);
+                    const minutes = Math.floor(remaining / 60000);
+                    const seconds = Math.floor((remaining % 60000) / 1000);
+                    const timeStr = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    const isCompleted = remaining <= 0;
+                    if (isCompleted && !t.completed) {
+                        t.completed = true;
+                        startBeepLoop(id);
+                    }
+                    const completedClass = isCompleted ? 'completed' : '';
+                    html += `<div class="timer-item ${completedClass}" data-timer-id="${id}">
+                        <div class="timer-info">
+                            <span class="labno-badge">${t.labNo}</span>
+                            <span class="timer-display">${timeStr}</span>
+                            ${isCompleted ? '<span style="color:#c45a2c; font-weight:600;">⚠️ TIME\'S UP</span>' : ''}
+                        </div>
+                        <div class="timer-actions">
+                            ${isCompleted ? 
+                                `<button class="done-btn" data-id="${id}">✅ Done (stop alert)</button>` : 
+                                `<button class="secondary" disabled style="opacity:0.5;">⏳ Running</button>`}
+                            <button class="secondary remove-btn" data-id="${id}">✖ Remove</button>
+                        </div>
+                    </div>`;
+                }
+                container.innerHTML = html;
+                // Attach listeners
+                document.querySelectorAll('.done-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = Number(btn.dataset.id);
+                        acknowledgeTimer(id);
+                    });
+                });
+                document.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = Number(btn.dataset.id);
+                        removeTimer(id);
+                    });
+                });
+            }
+
+            function acknowledgeTimer(id) {
+                const timer = timers.get(id);
+                if (timer) {
+                    stopBeepLoop(id);
+                    timer.completed = true;
+                    // remove from list after ack? keep but remove alert class
+                    renderTimerList();
+                }
+            }
+
+            function removeTimer(id) {
+                const timer = timers.get(id);
+                if (timer) {
+                    stopBeepLoop(id);
+                    timers.delete(id);
+                }
+                renderTimerList();
+            }
+
+            function addTimer(labNo) {
+                if (!labNo.trim()) { alert('Please enter Lab No.'); return; }
+                const id = nextId++;
+                const endTime = Date.now() + ESR_DURATION;
+                timers.set(id, { id, labNo: labNo.trim(), endTime, completed: false, beepInterval: null });
+                renderTimerList();
+                document.getElementById('newLabNo').value = '';
+            }
+
+            // Timer update interval
+            setInterval(() => {
+                renderTimerList();
+            }, 500);
+
+            document.getElementById('addTimerBtn').addEventListener('click', () => {
+                const labInput = document.getElementById('newLabNo');
+                addTimer(labInput.value);
+            });
+            document.getElementById('newLabNo').addEventListener('keypress', (e) => {
+                if(e.key === 'Enter') {
+                    addTimer(e.target.value);
+                }
+            });
+
+            // initial
+            updateWBC(); updatePlatelet();
+            activateTab('ptinr');
+        })();
+    </script>
+</body>
+</html>
